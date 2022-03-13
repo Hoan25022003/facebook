@@ -1,0 +1,112 @@
+body {
+  color: #333;
+  font-size: 62.5%;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.recommend {
+  flex: 3;
+  margin: 0 80px 0 140px;
+}
+
+.recommend-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.recommend-slogan {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.form {
+  margin-right: 50px;
+  flex: 2;
+}
+
+.form-login {
+  width: 75%;
+  background-color: white;
+  padding: 24px 10px 16px;
+  border-radius: 8px;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+#email,
+#password {
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 12px;
+  width: 100%;
+  outline: none;
+}
+
+#email:focus,
+#password:focus {
+  border: 2px solid var(--primary-color);
+}
+
+#password {
+  margin-top: 20px;
+}
+
+.form-submit {
+  margin-top: 25px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 6px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: var(--hover-color);
+}
+
+.form-support {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.form-support a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.form-footer {
+  margin-top: 25px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+  padding: 16px 48px;
+}
+
+.form-creat {
+  background-color: #4bd335;
+  border: none;
+  width: 100%;
+  color: white;
+  padding: 12px 6px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-creat:hover {
+  background-color: #64d352;
+}
