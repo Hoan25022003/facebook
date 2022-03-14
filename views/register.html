@@ -5,68 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up Facebook</title>
+    <link
+      rel="icon"
+      href="../public/icons/Logo Facebook.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/public/css/base.css" />
     <link rel="stylesheet" href="/public/css/register.css" />
   </head>
   <body>
     <div class="main">
-      <form action="" method="POST" class="form" id="form-1">
-        <h3 class="heading">Thành viên đăng ký</h3>
-        <p class="desc">Vui lòng điền đầy đủ thông tin dưới đây !</p>
-
-        <div class="spacer"></div>
-
+      <div class="header">
+        <p class="header-logo">facebook</p>
+        <a href="/Login" class="header-login">Đăng nhập</a>
+      </div>
+      <div class="content">
+        <p class="content-title">Chào mừng đến với Facebook</p>
+        <p class="content-slogan">Mạng lưới xã hội lớn nhất thế giới</p>
+      </div>
+      <div class="form">
+        <h2>Tạo tài khoản mới</h2>
         <div class="form-group">
-          <label for="fullname" class="form-label">Tên đầy đủ</label>
-          <input
-            id="fullname"
-            name="fullname"
-            type="text"
-            placeholder="VD: Đỗ Hoàn"
-            class="form-control"
-          />
+          <input type="text" placeholder="Họ và tên" id="fullname" />
           <span class="form-message"></span>
         </div>
-
         <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="text"
-            placeholder="VD: email@domain.com"
-            class="form-control"
-          />
+          <input type="email" placeholder="Email" id="email" />
           <span class="form-message"></span>
         </div>
-
         <div class="form-group">
-          <label for="password" class="form-label">Mật khẩu</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Nhập mật khẩu"
-            class="form-control"
-          />
+          <input type="password" placeholder="Mật khẩu" id="password" />
           <span class="form-message"></span>
         </div>
-
-        <div class="form-group">
-          <label for="password_confirmation" class="form-label"
-            >Nhập lại mật khẩu</label
-          >
-          <input
-            id="password_confirmation"
-            name="password_confirmation"
-            placeholder="Nhập lại mật khẩu"
-            type="password"
-            class="form-control"
-          />
-          <span class="form-message"></span>
+        <div class="form-footer">
+          <input type="date" id="date" />
+          <select name="" id="gender">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+          </select>
         </div>
-
-        <a class="form-submit" href="/Login">Đăng ký</a>
-      </form>
+        <button class="btn-register">Đăng kí</button>
+      </div>
     </div>
   </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="/public/js/register.js"></script>
 </html>

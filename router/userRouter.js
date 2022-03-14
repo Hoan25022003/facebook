@@ -48,24 +48,4 @@ router.get("/login", async (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
-  userModel
-    .create(
-      {
-        username: "Hoan",
-        age: 19,
-        sex: "Male",
-        password: "1234",
-      },
-      {
-        username: "Chien",
-        age: 22,
-        sex: "Male",
-        password: "123456",
-      }
-    )
-    .then((data) => res.json("ok"))
-    .catch((err) => res.json(err));
-});
-
 module.exports = router;

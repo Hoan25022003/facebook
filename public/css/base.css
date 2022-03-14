@@ -9,6 +9,9 @@ html {
 }
 
 :root {
+  --page-color: #f0f2f5;
+  --change-color: #18191a;
+  --header-color: #242526;
   --primary-color: #1178f2;
   --hover-color: #3487ec;
 }

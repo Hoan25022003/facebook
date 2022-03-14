@@ -6,7 +6,7 @@ const checkLogin = require("../checkForm");
 //   res.download(path.join("../public/img/ảnh đẹp thiên nhiên.jpg"));
 // });
 
-router.get("/Home", checkLogin, (req, res) => {
+router.get("/Home", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/home.html"));
 });
 
@@ -16,6 +16,10 @@ router.get("/Register", (req, res) => {
 
 router.get("/Login", (req, res) => {
   res.sendFile(path.join(__dirname, "../views/login.html"));
+});
+
+router.get("/Profile", (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/profile.html"));
 });
 
 module.exports = router;

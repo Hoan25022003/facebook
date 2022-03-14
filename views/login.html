@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign in Facebook</title>
+    <title>Login Facebook</title>
     <link
       rel="icon"
       href="../public/icons/Logo Facebook.png"
@@ -23,9 +23,9 @@
         </p>
       </div>
       <div class="form">
-        <form action="" class="form-login">
+        <div class="form-login">
           <div class="form-group">
-            <input type="text" placeholder="Email" id="email" />
+            <input type="email" placeholder="Email" id="email" />
             <span class="form-message"></span>
           </div>
           <div class="form-group">
@@ -37,10 +37,19 @@
             <a href="">Quên mật khẩu?</a>
           </p>
           <div class="form-footer">
-            <button class="form-creat">Tạo tài khoản mới</button>
+            <a href="/Register">
+              <button class="form-creat">Tạo tài khoản mới</button>
+            </a>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="/public/js/login.js"></script>
 </html>
