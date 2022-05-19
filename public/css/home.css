@@ -1,30 +1,466 @@
-.main {
-  margin: 0 auto;
+main {
+  position: relative;
+  background-color: var(--page-color);
 }
 
-h1 {
-  font-size: 40px;
+/* Content */
+.content {
+  display: flex;
+}
+
+/* Category */
+.content-category {
+  position: fixed;
+  width: calc(25% - 50px);
+  min-width: 255px;
+  top: var(--header-height);
+  z-index: 1;
+}
+
+.content-category-list {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  margin-left: 6px;
+}
+
+.content-category-item {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  border-radius: 6px;
+}
+
+.content-category-item:hover {
+  background-color: var(--hover-nav);
+  color: #333;
+}
+
+.content-category-item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 16px 0 12px;
+}
+
+/* Post */
+.content-post {
+  width: 40%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content-post-creat {
+  background-color: white;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.content-post-creat-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.content-post-creat-text img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.content-post-creat-text div {
+  width: calc(100% - 42px);
+  margin-left: 8px;
+  border-radius: 20px;
+  padding: 8px 14px;
+  background-color: #f0f2f5;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.content-post-creat-text div:hover {
+  background-color: var(--hover-nav);
+}
+
+.content-post-creat-image {
+  padding-top: 8px;
+  border-top: 1px solid var(--hover-nav);
+  display: flex;
+  align-items: center;
+}
+
+.content-post-creat-upload {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  background-color: transparent;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 8px 0;
+  border-radius: 5px;
+}
+
+.content-post-creat-upload i {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.content-post-creat-upload:first-child i {
+  color: var(--upload-color);
+}
+
+.content-post-creat-upload:last-child i {
+  color: var(--status-color);
+}
+
+.content-post-creat-upload:hover {
+  cursor: pointer;
+  background-color: var(--page-color);
+}
+
+.content-post-body img {
+  width: 100%;
+}
+
+.content-post-container {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.content-post-edit {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--font-color);
+}
+
+.content-post-edit:hover {
+  background-color: var(--page-color);
+}
+
+.content-post-header {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.content-post-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content-post-header-name h4,
+.content-post-header-name p {
+  margin-left: 8px;
+  margin-bottom: 0;
+}
+
+.content-post-header-name h4 {
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.content-post-header-name p {
+  font-size: 13px;
+}
+
+.content-post-header-title {
+  padding: 0 12px;
+  color: black;
+  font-size: 15px;
+}
+
+.content-post-body-favor {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+.content-post-body-favor p {
+  color: var(--font-color);
+  margin-bottom: 0;
+}
+
+.content-post-footer {
+  padding: 0 12px;
+}
+
+.content-post-footer-status {
+  border-top: 1px solid #dadada;
+  display: flex;
+  align-items: center;
+  margin: 0 -2px;
+  padding: 4px 0;
+}
+
+.content-post-footer-status button {
+  flex: 1;
+  border: none;
+  padding: 8px 0;
+  margin: 0 2px;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 15px;
+  color: var(--font-color);
+}
+
+.content-post-footer-status button:hover {
+  background-color: #f0f2f5;
+}
+
+.content-post-footer-status button i {
+  margin-right: 6px;
+}
+
+/* Friend */
+.content-friend {
+  width: calc(25% - 50px);
+  min-width: 255px;
+  position: fixed;
+  right: 0;
+}
+
+.content-friend {
+  margin-top: 16px;
+}
+
+.content-friend-list {
+  list-style: none;
+  width: 100%;
+}
+
+.content-friend-list h3 {
+  font-size: 18px;
+  color: var(--font-color);
+  margin-bottom: 12px;
+}
+
+.content-friend-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.content-friend-link:hover {
+  background-color: var(--hover-nav);
+}
+
+.content-friend-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.content-friend-link p {
+  margin-bottom: 0;
+  margin-left: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Modal Post */
+.modal {
+  background-color: var(--modal-fade-color);
+}
+
+.modal-content {
+  width: 500px;
+  position: relative;
+  border: none;
+  animation: showModal linear 0.25s;
+}
+
+.modal-header {
+  justify-content: center;
+}
+
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #d8dadf;
+}
+
+.modal-body {
+  padding: 16px 0;
+}
+
+.modal-body-profile {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.modal-body-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.modal-body-profile p {
+  margin-bottom: 0;
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+.modal-body-content {
+  position: relative;
+  height: 200px;
+  margin-top: 12px;
+  background: white;
+}
+
+.modal-body-content textarea {
+  border: none;
+  padding: 8px 16px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 22px;
+  resize: none;
+  background-color: transparent;
+}
+
+.modal-body-content-select {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.modal-body-content-theme {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.modal-body-content-theme img,
+.modal-body-content-theme div {
+  width: 76px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  margin: 0 8px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.modal-body-content-theme div {
+  background-color: var(--page-color);
+}
+
+.modal-body-content-theme button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--font-color);
+  background-color: rgba(228, 230, 235, 0.8);
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.theme-previous {
+  left: 0;
+}
+
+.theme-next {
+  right: 0;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.modal-footer-post {
+  width: 100%;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
   color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: ease-in 0.25s;
 }
 
-.box {
+.modal-footer-post:hover {
+  background-color: var(--hover-color);
+}
+
+.show-btn-post {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal Post Img */
+#title {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.modal-body-content-upload {
+  background-color: var(--page-color);
+  margin: 16px;
+  border-radius: 6px;
+  text-align: center;
+  height: 180px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.btn-out {
-  background-color: transparent;
-  border: none;
-  margin-top: 50px;
+.modal-body-content-upload:hover {
+  background-color: #EAEBED;
 }
 
-.btn-out a {
-  border-radius: 8px;
-  background-color: coral;
-  padding: 14px 28px;
-  color: white;
-  width: max-content;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: 500;
+.modal-body-content-upload i {
+  font-size: 30px;
+}
+
+.modal-body-content-upload p {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.hidden-text i,
+.hidden-text p {
+  z-index: -1;
 }

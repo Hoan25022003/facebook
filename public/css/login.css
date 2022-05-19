@@ -1,13 +1,8 @@
-body {
-  color: #333;
-  font-size: 62.5%;
-}
-
 .main {
   height: 100vh;
   width: 100vw;
-  background-color: var(--page-color);
   display: flex;
+  background-color: var(--page-color);
   align-items: center;
   justify-content: space-evenly;
 }
@@ -33,10 +28,15 @@ body {
   flex: 2;
 }
 
+.form-group {
+  position: relative;
+  margin-top: 8px;
+}
+
 .form-login {
-  width: 75%;
+  width: 360px;
   background-color: white;
-  padding: 24px 10px 16px;
+  padding: 16px 10px;
   border-radius: 8px;
   box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
 }
@@ -49,15 +49,12 @@ body {
   padding: 12px;
   width: 100%;
   outline: none;
+  margin-top: 20px;
 }
 
 #email:focus,
 #password:focus {
   border: 2px solid var(--primary-color);
-}
-
-#password {
-  margin-top: 20px;
 }
 
 .form-submit {
@@ -112,6 +109,9 @@ body {
 }
 
 .form-message {
-  color: red;
-  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 4px;
+  color: var(--error-color);
+  font-size: 13px;
 }

@@ -4,14 +4,62 @@
   box-sizing: border-box;
 }
 
+:root {
+  --page-color: #f0f2f5;
+  --header-change-color: #242526;
+  --change-color: #18191a;
+  --primary-color: #1178f2;
+  --hover-color: #3487ec;
+  --profile-active: #e7f3ff;
+  --btn-profile-color: #ebedf0;
+  --font-color: #65676b;
+  --hover-nav: #e4e6e9;
+  --upload-color: #45bd62;
+  --status-color: #f7b928;
+  --error-color: #ed4337;
+  --heart-color: #fa383e;
+  --modal-fade-color: rgba(255, 255, 255, 0.5);
+  --cover-img-color: linear-gradient(to top, #fff 70%, #61c5f0);
+  --header-height: 56px;
+  --profile-main-width: 1050px;
+}
+
 html {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-:root {
-  --page-color: #f0f2f5;
-  --change-color: #18191a;
-  --header-color: #242526;
-  --primary-color: #1178f2;
-  --hover-color: #3487ec;
+body {
+  color: #333;
+  font-size: 62.5%;
+}
+
+main {
+  background-color: var(--page-color);
+}
+
+.active {
+  color: var(--primary-color) !important;
+  pointer-events: none;
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-color);
+  bottom: -5px;
+  left: 0;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

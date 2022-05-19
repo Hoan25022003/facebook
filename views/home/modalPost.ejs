@@ -1,0 +1,109 @@
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tạo bài viết</h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-profile">
+          <a href="/user/<%= user._id %>">
+            <img src="<%= user.avatar %>" alt="" />
+          </a>
+          <p><%= user.fullname %></p>
+        </div>
+        <div class="modal-body-content">
+          <textarea
+            rows="3"
+            placeholder="<%= user.fullname.split(' ')[user.fullname.split(' ').length - 1] %> ơi, bạn đang nghĩ gì thế ? "
+          ></textarea>
+          <div class="modal-body-content-select">
+            <div class="modal-body-content-theme">
+              <button class="theme-previous">
+                <i class="fas fa-angle-left"></i>
+              </button>
+              <div class="col-2"></div>
+              <% listTheme.forEach(theme => { %>
+              <img
+                src="<%= theme %>"
+                onclick="selectTheme('<%= theme %>')"
+                class="col-2"
+                alt=""
+              />
+              <% }) %>
+              <button class="theme-next">
+                <i class="fas fa-angle-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="modal-footer-post" onclick="btnPost()">
+          Đăng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel2">Tạo bài viết</h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-profile">
+          <a href="/user/<%= user._id %>">
+            <img src="<%= user.avatar %>" alt="" />
+          </a>
+          <p><%= user.fullname %></p>
+        </div>
+        <div class="modal-body-content">
+          <input type="text" id="title" placeholder="<%= user.fullname.split(' ')[user.fullname.split(' ').length - 1] %> ơi, bạn đang nghĩ gì thế ? ">
+          <form enctype="multipart/form-data">
+            <div class="modal-body-content-upload" onclick="importData()">
+              <i class="fas fa-image"></i>
+              <p>Thêm ảnh/video</p>
+            </div>
+            <input
+              type="file"
+              name="picture"
+              id="upload-picture"
+              style="display: none"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer" style="margin-top: 20px;">
+        <button type="button" class="modal-footer-post" onclick="btnPostImg()">
+          Đăng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

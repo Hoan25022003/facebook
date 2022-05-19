@@ -1,0 +1,132 @@
+<div class="profile">
+  <div class="profile-info">
+    <a href="<%= username.coverImg %>">
+      <img src="<%= username.coverImg %>" alt="" />
+    </a>
+    <div class="profile-info-main">
+      <div class="profile-info-main-user">
+        <div class="profile-info-main-view">
+          <a href="<%= username.avatar %>">
+            <img src="<%= username.avatar %>" alt="" />
+          </a>
+          <h3><%= username.fullname %></h3>
+        </div>
+        <% if (username.token === user.token) { %>
+        <button
+          class="profile-info-edit"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <i class="fas fa-pen"></i>
+          Chỉnh sửa trang cá nhân
+        </button>
+        <% } else { %>
+        <button class="profile-info-follow">
+          <i class="fas fa-plus"></i>
+          Theo dõi
+        </button>
+        <% } %>
+      </div>
+      <div class="profile-info-main-category">
+        <ul class="profile-info-list">
+          <li class="profile-info-item">
+            <a href="/user/<%= username._id %>" class="profile-info-link active"
+              >Bài viết</a
+            >
+          </li>
+          <li class="profile-info-item">
+            <a href="/user/<%= username._id %>/about" class="profile-info-link"
+              >Giới thiệu</a
+            >
+          </li>
+          <li class="profile-info-item">
+            <a href="" class="profile-info-link">Người theo dõi</a>
+          </li>
+          <% if (username.token === user.token) { %>
+          <li class="profile-info-item">
+            <a
+              href="/user/<%= username._id %>/change-password"
+              class="profile-info-link"
+              >Đổi mật khẩu</a
+            >
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Chỉnh sửa trang cá nhân
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body-group">
+          <div class="modal-body-title">
+            <h3>Ảnh đại diện <span>(Nhấp vào ảnh để thay đổi)</span></h3>
+            <p onclick="changeAvatar()">Thay đổi</p>
+          </div>
+          <form
+            enctype="multipart/form-data"
+            class="modal-body-img modal-body-avatar"
+          >
+            <input
+              type="file"
+              name="avatar"
+              id="upload-avatar"
+              style="display: none"
+            />
+            <img src="<%= username.avatar %>" alt="" onclick="importData()" />
+          </form>
+        </div>
+        <div class="modal-body-group">
+          <div class="modal-body-title">
+            <h3>Ảnh bìa <span>(Nhấp vào ảnh để thay đổi)</span></h3>
+            <p onclick="changeCover()">Thay đổi</p>
+          </div>
+          <form
+            enctype="multipart/form-data"
+            class="modal-body-img modal-body-cover"
+          >
+            <input
+              type="file"
+              name="coverImg"
+              id="upload-cover"
+              style="display: none"
+            />
+            <img
+              src="<%= username.coverImg %>"
+              alt=""
+              onclick="importData2()"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          onclick="window.location.href = '/user/<%= username._id %>/about'"
+        >
+          Chỉnh sửa thông tin giới thiệu
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

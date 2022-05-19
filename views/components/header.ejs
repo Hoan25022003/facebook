@@ -1,0 +1,163 @@
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    padding: 0 16px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 6px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-logo {
+    flex: 1;
+  }
+
+  .header-logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-nav {
+    flex: 1.4;
+    display: flex;
+    margin: 0 -4px;
+  }
+
+  .header-nav-icon {
+    text-align: center;
+    flex: 1;
+    padding: 8px 0;
+    font-size: 20px;
+    color: var(--font-color);
+    border-radius: 6px;
+    margin: 0 4px;
+  }
+
+  .header-nav-icon:hover {
+    background-color: var(--page-color);
+    color: var(--font-color);
+  }
+
+  .header-notify {
+    flex: 1;
+  }
+
+  .header-notify > div {
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .header-notify-avatar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+
+  .header-notify-avatar,
+  .header-notify-btn {
+    margin-right: 10px;
+  }
+
+  .header-notify-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--hover-nav);
+  }
+
+  .header-notify-btn:hover {
+    background-color: #d9dadb;
+  }
+
+  .header-notify-avatar {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 3px 12px 3px 6px;
+    border-radius: 18px;
+  }
+
+  .header-notify-avatar:hover {
+    background-color: #f0f2f5;
+    color: #333;
+  }
+
+  .header-notify-avatar img {
+    margin-right: 2px;
+  }
+
+  .height-empty {
+    height: var(--header-height);
+    background-color: var(--profile-active);
+    color: var(--primary-color);
+  }
+
+  .profile-active {
+    background-color: var(--profile-active);
+    color: var(--primary-color);
+    pointer-events: none;
+  }
+</style>
+
+<header class="header">
+  <div class="header-logo">
+    <a href="/Home">
+      <img src="/public/img/Logo Facebook.png" alt="" />
+    </a>
+  </div>
+  <div class="header-nav">
+    <a href="/Home" class="header-nav-icon active" title="Home"
+      ><i class="fa-solid fa-house"></i
+    ></a>
+    <a href="" class="header-nav-icon" title="Video"
+      ><i class="fas fa-video"></i
+    ></a>
+    <a href="" class="header-nav-icon" title="Group"
+      ><i class="fas fa-users"></i
+    ></a>
+    <a href="" class="header-nav-icon" title="Friend"
+      ><i class="fas fa-user-friends"></i
+    ></a>
+  </div>
+  <div class="header-notify">
+    <div>
+      <a href="/user/<%= user._id %>" class="header-notify-avatar">
+        <img src="<%= user.avatar %>" alt="" />
+        <%= user.fullname %>
+      </a>
+      <button class="header-notify-logo header-notify-btn">
+        <i class="fas fa-bell"></i>
+      </button>
+      <button class="header-notify-out header-notify-btn" onclick="logOut()">
+        <i class="fas fa-sign-out"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="height-empty"></div>
+
+<script>
+  async function logOut() {
+    try {
+      await $.ajax({
+        url: "/user/logout",
+        type: "PUT",
+      });
+      document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      window.location.href = "/login";
+    } catch (error) {
+      console.log(error);
+    }
+  }
+</script>

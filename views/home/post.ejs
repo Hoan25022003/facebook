@@ -1,0 +1,59 @@
+<div class="content-post-creat">
+  <div class="content-post-creat-text">
+    <a href="/user/<%= user._id %>">
+      <img src="<%= user.avatar %>" alt="" />
+    </a>
+    <div data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <span
+        ><%= user.fullname.split(' ')[user.fullname.split(' ').length - 1] %>
+        ơi, bạn đang nghĩ gì thế ?</span
+      >
+    </div>
+  </div>
+  <div class="content-post-creat-image" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+    <div class="content-post-creat-upload">
+      <i class="fas fa-images"></i> Ảnh/Video
+    </div>
+    <div class="content-post-creat-upload">
+      <i class="far fa-laugh-beam"></i> Cảm xúc/Hoạt động
+    </div>
+  </div>
+</div>
+<% listPost.forEach(post => { %>
+<div class="content-post-container">
+  <button class="content-post-edit" title="Lưu bài viết">
+    <i class="fas fa-bookmark"></i>
+  </button>
+  <div class="content-post-header">
+    <a href="">
+      <img
+        src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-1/270778668_449248653330731_2081197846630344153_n.jpg?stp=dst-jpg_p200x200&_nc_cat=100&ccb=1-6&_nc_sid=1eb0c7&_nc_ohc=-gdYQdRZSb4AX9rUPbR&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-WGkpo4h-xcdLqo1git1S6AHMmIMfE0VzlyoiSCm-6RQ&oe=62872024"
+        alt=""
+      />
+    </a>
+    <div class="content-post-header-name">
+      <h4>Troll ngoại hạng</h4>
+      <p><% new Date() %></p>
+    </div>
+  </div>
+  <p class="content-post-header-title">Oke không ae ơi</p>
+  <div class="content-post-body">
+    <a href="">
+      <img
+        src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/280541582_522549122667350_8387389081383588114_n.jpg?stp=dst-jpg_p843x403&_nc_cat=106&ccb=1-6&_nc_sid=730e14&_nc_ohc=_oPeM0vcuC4AX8Oc-j9&_nc_ht=scontent.fhan14-2.fna&oh=00_AT9CIRMsxy1L5BHwN661y4TYToNnQKZo4lXIUCtQSXRm8Q&oe=6286CFF7"
+        alt=""
+      />
+    </a>
+    <div class="content-post-body-favor">
+      <p>2200 lượt thích</p>
+      <p>368 bình luận</p>
+    </div>
+  </div>
+  <div class="content-post-footer">
+    <div class="content-post-footer-status">
+      <button><i class="fas fa-heart"></i> Thích</button>
+      <button><i class="far fa-comment-alt"></i> Bình luận</button>
+    </div>
+  </div>
+</div>
+<% }) %>

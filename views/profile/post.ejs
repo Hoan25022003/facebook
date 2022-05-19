@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= username.fullname %> | FBM</title>
+    <link rel="icon" href="/public/img/Logo Facebook.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/public/css/base.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/public/css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <%- include('../components/header') %>
+    <main>
+      <%- include('./info') %>
+      <div class="detail">
+        <div class="detail-info col-5">
+          <h3>Giới thiệu</h3>
+          <% if (username.profile.address) { %>
+          <div class="detail-info-profile">
+            <i class="fas fa-home"></i>
+            Sống tại <span><%= username.profile.address %></span>
+          </div>
+          <% } %> <% if (username.profile.position) { %>
+          <div class="detail-info-profile">
+            <i class="fas fa-map-marker-alt"></i>
+            Đến tại <span><%= username.profile.position %></span>
+          </div>
+          <% } %> <% if (username.profile.education) { %>
+          <div class="detail-info-profile">
+            <i class="fas fa-user-graduate"></i>
+            Học tập tại trường <span><%= username.profile.education %></span>
+          </div>
+          <% } %> <% if (username.profile.working) { %>
+          <div class="detail-info-profile">
+            <i class="fas fa-briefcase"></i>
+            Làm việc tại <span><%= username.profile.working %></span>
+          </div>
+          <% } %> <% if (username.token === user.token) { %>
+          <button
+            onclick="window.location.href = '/user/<%= username._id %>/about'"
+            class="detail-info-add"
+          >
+            Thêm tiểu sử
+          </button>
+          <%} %>
+        </div>
+        <div class="detail-post col-7">
+          <% if (username.token === user.token) { %>
+          <div class="detail-post-creat">
+            <div class="detail-post-creat-text">
+              <a href="/user/<%= user._id %>">
+                <img src="<%= user.avatar %>" alt="" />
+              </a>
+              <div>
+                <span
+                  ><%= user.fullname.split(' ')[user.fullname.split(' ').length
+                  - 1] %> ơi, bạn đang nghĩ gì thế ?</span
+                >
+              </div>
+            </div>
+            <div class="detail-post-creat-image">
+              <div class="detail-post-creat-upload">
+                <i class="fas fa-images"></i> Ảnh/Video
+              </div>
+              <div class="detail-post-creat-upload">
+                <i class="far fa-laugh-beam"></i> Cảm xúc/Hoạt động
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <div class="detail-post-filter">
+            <h3>Bài viết</h3>
+          </div>
+          <div class="detail-post-container">
+            <button class="detail-post-edit">
+              <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <div class="detail-post-header">
+              <a href="">
+                <img
+                  src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/264833089_326481625883720_1023093413367625198_n.jpg?stp=cp0_dst-jpg_p60x60&_nc_cat=1&ccb=1-5&_nc_sid=1eb0c7&_nc_ohc=J0YO4shj8HQAX9lQpZF&_nc_ht=scontent.fhan2-4.fna&oh=00_AT_EbJpizXqPZEYfR8uj5UV_GAU6wAPjIR2NLr8uSO-jyQ&oe=627392E2"
+                  alt=""
+                />
+              </a>
+              <div class="detail-post-header-name">
+                <h4>Troll ngoại hạng</h4>
+                <p>6 giờ</p>
+              </div>
+            </div>
+            <p class="detail-post-header-title">Oke không ae ơi</p>
+            <div class="detail-post-body">
+              <a href="">
+                <img
+                  src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/279244397_419450826586799_4761456639940912500_n.png?stp=dst-png_p843x403&_nc_cat=1&ccb=1-5&_nc_sid=730e14&_nc_ohc=7glMpHq8x88AX-XagQx&_nc_ht=scontent.fhan2-4.fna&oh=00_AT-gexTvEXC9jK9Zsf2ndCKEfeMDd0TOxMrXU9TKxg8mOw&oe=6274DC12"
+                  alt=""
+                />
+              </a>
+              <div class="detail-post-body-favor">
+                <p>2200 lượt thích</p>
+                <p>368 bình luận</p>
+              </div>
+            </div>
+            <div class="detail-post-footer">
+              <div class="detail-post-footer-status">
+                <button><i class="fas fa-heart"></i> Thích</button>
+                <button><i class="far fa-comment-alt"></i> Bình luận</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/public/js/profile.js"></script>
+</html>
