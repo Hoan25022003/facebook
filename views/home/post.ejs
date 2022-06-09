@@ -27,23 +27,36 @@
   <div class="content-post-header">
     <a href="">
       <img
-        src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-1/270778668_449248653330731_2081197846630344153_n.jpg?stp=dst-jpg_p200x200&_nc_cat=100&ccb=1-6&_nc_sid=1eb0c7&_nc_ohc=-gdYQdRZSb4AX9rUPbR&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-WGkpo4h-xcdLqo1git1S6AHMmIMfE0VzlyoiSCm-6RQ&oe=62872024"
+        src="<%= post.userID.avatar %>"
         alt=""
       />
     </a>
     <div class="content-post-header-name">
-      <h4>Troll ngoại hạng</h4>
-      <p><% new Date() %></p>
+      <h4><%= post.userID.fullname %></h4>
+      <p>10 phút</p>
     </div>
   </div>
-  <p class="content-post-header-title">Oke không ae ơi</p>
   <div class="content-post-body">
-    <a href="">
-      <img
-        src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/280541582_522549122667350_8387389081383588114_n.jpg?stp=dst-jpg_p843x403&_nc_cat=106&ccb=1-6&_nc_sid=730e14&_nc_ohc=_oPeM0vcuC4AX8Oc-j9&_nc_ht=scontent.fhan14-2.fna&oh=00_AT9CIRMsxy1L5BHwN661y4TYToNnQKZo4lXIUCtQSXRm8Q&oe=6286CFF7"
-        alt=""
-      />
-    </a>
+    <% if (post.typePost === 'text') { %>
+      <% if (post.theme) { %>
+        <div class="content-post-body-theme" >
+          <img src="<%= post.theme %>" alt="">
+          <h3><%= post.title %></h3>
+        </div>
+      <% } else { %>
+        <div class="content-post-body-text">
+          <h3><%= post.title %></h3>
+        </div>
+      <% } %>
+    <% } else { %>
+      <p class="content-post-body-title"><%= post.title %></p>
+      <a href="">
+        <img
+          src="https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/280541582_522549122667350_8387389081383588114_n.jpg?stp=dst-jpg_p843x403&_nc_cat=106&ccb=1-6&_nc_sid=730e14&_nc_ohc=_oPeM0vcuC4AX8Oc-j9&_nc_ht=scontent.fhan14-2.fna&oh=00_AT9CIRMsxy1L5BHwN661y4TYToNnQKZo4lXIUCtQSXRm8Q&oe=6286CFF7"
+          alt=""
+        />
+      </a>
+    <% } %>
     <div class="content-post-body-favor">
       <p>2200 lượt thích</p>
       <p>368 bình luận</p>

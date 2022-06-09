@@ -87,6 +87,22 @@ async function btnPost() {
   }
 }
 
+async function btnPostImg() {
+  const title = $('#title').val()
+  try {
+    await $.ajax({
+      url : 'post/picture',
+      type : 'POST',
+      data : {
+        title,
+      }
+    })
+    window.location.reload();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 //* Modal Post Image
 $('#title').on("keyup", () => {
   if ($('#title').val() != "") {
@@ -118,6 +134,3 @@ fileToRead.addEventListener(
   false
 );
 
-async function btnPostImg() {
-  
-}
